@@ -1,6 +1,7 @@
 \documentclass[
     % Uncomment the following for more compact font size and spacing
     % compact
+    %<{type: "reference", id: "cvStyle"}>
 ]{llresume}
 
 % Uncomment the following commands to change the document's colors
@@ -10,6 +11,9 @@
 
 % Define custom commands, if needed
 \renewcommand{\emph}[1]{{\bfseries\color{accentcolor}#1}}
+
+\newcommand{\hide}[1]
+{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Personal information
@@ -267,5 +271,17 @@
     %>
 
 \end{mainpane}
+
+%<{
+%    type: "radio",
+%    description: "Choose CV style (optional)",
+%    values: [
+%        {description: "Compact", value: "compact"},
+%        {description: "Default", value: ""}
+%    ],
+%    id: "cvStyle"
+% }
+\hide{}
+%>
 
 \end{document}

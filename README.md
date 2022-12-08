@@ -5,7 +5,11 @@ A [Craftadoc](https://craftadoc.com) template. (Using LaTeX.)
 Easily create a beautiful CV by using the Lean Two Column CV template. This CV starts with a beautiful header, with a big name, profile image and personal information. The list of personal info items is customizable, allowing you to choose any font-awesome icon, and allows for embedded links. Useful in case you are sending your CV electronically. Then follows a highlighted short introduction, featuring a yellow background, and blue bold emphasis. (You can specify emphasis by using the `\emph{your_text_here}` command, directly inside the text block input.)
 
 
-The main CV content is split into two columns. Every section starts with a title tag pointing to the dotted line in the middle. The sections provided by default are *education*, *publications*, *projects*, *work experience*, *skills*, and *personal interests*, each allowing you to enter information in the same way as shown in the preview. These provided sections will not be shown when left empty. Want to add more sections? That's possible with the final *extra sections* input. Add as many sections as you want, but you are limited to the generic input, which looks like the items in the *publications* section. Happy writing!
+The main CV content is split into two columns. Every section starts with a title tag pointing to the dotted line in the middle. The sections provided by default are *education*, *publications*, *projects*, *work experience*, *skills*, and *personal interests*, each allowing you to enter information in the same way as shown in the preview. These provided sections will not be shown when left empty. Want to add more sections? That's possible with the final *extra sections* input. Add as many sections as you want, but you are limited to the generic input, which looks like the items in the *publications* section.
+
+Finally, there's the option for a compact or a default layout. The compact option allows more content to fit on a single page.
+
+Happy writing!
 
 ### How do I use this?
 

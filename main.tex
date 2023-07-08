@@ -28,37 +28,57 @@
 % \infoBirthday       \infoHomepage       \infoFlickr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%<{"type": "group", "description": "Name and profile picture"}
+%<{type: "group", description: "Name and profile picture"}
     % First name, last name, and optional pronouns
-    \name{Clio} %<{"type": "text", "description": "First name"}>
-        {Esker Gabbro} %<{"type": "text", "description": "Last name"}>
+    \name{Clio} %<{type: "text", description: "First name", inputValue: "Clio"}>
+        {Esker Gabbro} %<{type: "text", description: "Last name", inputValue: "Esker Gabbro"}>
 
     % Profile photo
-    \photo{photo.png} %<{"type": "crop", "aspect": "1", "description": "Your profile picture / photo"}>
+    \photo{photo.png} %<{type: "crop", aspect: 1, description: "Your profile picture / photo", inputValue: "photo.png"}>
 %>
 
 % Contacts and other info
-%<{"type": "group", "description": "Personal information"}
+%<{type: "group", description: "Personal information"}
     \personalinfo{
-        \infoBirthday{31/01/1970 (Earth, Solar System)} %<{"type": "date", "description": "Birth date (optional)", "deleteOnEmpty": "true"}>
-        \infoAddress{Mars, Solar System} %<{"type": "text", "description": "Address (optional)", "deleteOnEmpty": "true"}>
-        %<{"type": "list", "description": "More personal info", "deleteOnEmpty": "true"}
-            %<{"type": "group", "description": ""}
+        \infoBirthday{31/01/1970} %<{type: "date", description: "Birth date (optional)", deleteOnEmpty: "true"}>
+        \infoAddress{Mars, Solar System} %<{type: "text", description: "Address (optional)", deleteOnEmpty: "true", inputValue: "Mars, Solar System"}>
+        %<{type: "list", description: "More personal info", deleteOnEmpty: "true"}
+            %<{type: "group", description: ""}
             \infoGeneric
-            {\faEnvelope} %<{"type": "faicon", "description": "Icon"}>
-            {ceskergabbro@globemail.com} %<{"type": "text", "description": "Text"}>
-            [mailto:ceskergabbro@globemail.com] %<{"type": "url", "description": "URL (Optional)", "deleteOnEmpty": "true"}>
+            {\faEnvelope} %<{type: "faicon", description: "Icon", inputValue: "\\faEnvelope", inputValueIcon: "FaEnvelope"}>
+            {ceskergabbro@globemail.com} %<{type: "text", description: "Text", inputValue: "ceskergabbro@globemail.com"}>
+            [mailto:ceskergabbro@globemail.com] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: "true", inputValue: "mailto:ceskergabbro@globemail.com"}>
             %>
-            \infoHomepage{ceskergabbro.com}[https://ceskergabbro.com]
-            \infoLinkedin{www.linkedin.com/in/ceskergabbro}[https://www.linkedin.com/in/ceskergabbro]
-            \infoGithub{github.com/ceskergabbro}[https://github.com/ceskergabbro]
+            %<{type: "group", description: ""}
+            \infoGeneric
+            {\faGlobe} %<{type: "faicon", description: "Icon", inputValue: "\\faGlobe", inputValueIcon: "FaGlobe"}>
+            {ceskergabbro.com} %<{type: "text", description: "Text", inputValue: "ceskergabbro.com"}>
+            [https://ceskergabbro.com] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: "true", inputValue: "https://ceskergabbro.com"}>
+            %>
+            %<{type: "group", description: ""}
+            \infoGeneric
+            {\faLinkedin} %<{type: "faicon", description: "Icon", inputValue: "\\faLinkedin", inputValueIcon: "FaLinkedin"}>
+            {www.linkedin.com/in/ceskergabbro} %<{type: "text", description: "Text", inputValue: "www.linkedin.com/in/ceskergabbro"}>
+            [https://www.linkedin.com/in/ceskergabbro] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: "true", inputValue: "https://www.linkedin.com/in/ceskergabbro"}>
+            %>
+            %<{type: "group", description: ""}
+            \infoGeneric
+            {\faGithub} %<{type: "faicon", description: "Icon", inputValue: "\\faGithub", inputValueIcon: "FaGithub"}>
+            {github.com/ceskergabbro} %<{type: "text", description: "Text", inputValue: "github.com/ceskergabbro"}>
+            [https://github.com/ceskergabbro] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: "true", inputValue: "https://github.com/ceskergabbro"}>
+            %>
         %>
     }
 %>
 
 % Tag line
 \tagline{
-    %<{"type": "textblock", "description": "Tagline", escapeLatex: false}
+    %<{
+    %     type: "textblock",
+    %     description: "Tagline",
+    %     escapeLatex: false,
+    %     inputValue: "My name is Clio Esker Gabbro. I am a \emph{space explorer} with experience on Mars. My current ambition is to conduct further research on \emph{awareness during time loops}. Very importantly, I \emph{do not lie} on r\'esum\'es. In my free time, I enjoy formulating \emph{jokes and puns} and roasting \emph{vegan marshmallows}."
+    % }
     My name is Clio Esker Gabbro. I am a \emph{space explorer} with experience
     on Mars. My current ambition is to conduct further research on
     \emph{awareness during time loops}. Very importantly, I \emph{do not lie} on
@@ -93,137 +113,174 @@
 \makeheader
 
 \begin{mainpane}
-    %<{"type": "group", "description": "Education", "deleteOnEmpty": "true"}
+    %<{type: "group", description: "Education", deleteOnEmpty: true}
     \begin{mainsection}
-        {Education} %<{"type": "text", "description": "Custom education section title"}>
-        %<{"type": "list", "description": "Education items"}
-            %<{"type": "group", "description": ""}
+        {Education} %<{type: "text", description: "Education section title", inputValue: "Education"}>
+        %<{type: "list", description: "Education items"}
+            %<{type: "group", description: ""}
                 \entryJob
-                {PhD Irrelevant Science of Jokes} %<{"type": "text", "description": "Title"}>
-                [Perfected the fine art of species-inclusive interplanetary entertainment, a.k.a. PC jokes] %<{"type": "text", "description": "Description (optional)", "deleteOnEmpty": "true"}>
-                {Institute of PlutoTech (remote)} %<{"type": "text", "description": "Location"}>
-                {2013 -- 2017} %<{"type": "text", "description": "Duration, i.e. 2013 -- 2017"}>
+                {PhD Irrelevant Science of Jokes} %<{type: "text", description: "Title", inputValue: "PhD Irrelevant Science of Jokes"}>
+                [Perfected the fine art of species-inclusive interplanetary entertainment, a.k.a. PC jokes] %<{type: "text", description: "Description (optional)", deleteOnEmpty: true, inputValue: "Perfected the fine art of species-inclusive interplanetary entertainment, a.k.a. PC jokes"}>
+                {Institute of PlutoTech (remote)} %<{type: "text", description: "Location", inputValue: "Institute of PlutoTech (remote)"}>
+                {2013 -- 2017} %<{type: "text", description: "Duration", inputValue: "2013 -- 2017"}>
             %>
-            \entryJob
-            {MSc Cheap Space Entertainment}
-            [Learned how to make low-quality space movies, and how to sell them
-                as refined content]
-            {Lunar University of Technology}
-            {2010 -- 2012}
+            %<{type: "group", description: ""}
+                \entryJob
+                {MSc Cheap Space Entertainment} %<{type: "text", description: "Title", inputValue: "MSc Cheap Space Entertainment"}>
+                [Learned how to make low-quality space movies, and how to sell them as refined content] %<{type: "text", description: "Description (optional)", deleteOnEmpty: true, inputValue: "Learned how to make low-quality space movies, and how to sell them as refined content"}>
+                {Lunar University of Technology} %<{type: "text", description: "Location", inputValue: "Lunar University of Technology"}>
+                {2010 -- 2012} %<{type: "text", description: "Duration", inputValue: "2010 -- 2012"}>
+            %>
         %>
     \end{mainsection}
     %>
 
-    %<{"type": "group", "description": "Publications", "deleteOnEmpty": "true"}
+    %<{type: "group", description: "Publications", deleteOnEmpty: true}
     \begin{mainsection}
-        {Selected publications} %<{"type": "text", "description": "Custom publication section title"}>
-        %<{"type": "list", "description": "Publications"}
-            %<{"type": "group", "description": ""}
+        {Selected publications} %<{type: "text", description: "Publication section title", inputValue: "Selected publications"}>
+        %<{type: "list", description: "Publications"}
+            %<{type: "group", description: ""}
                 \entryPub
-                {Looking for Water on Mars} %<{"type": "text", "description": "Title"}>
-                []%<{"type": "text", "description": "Description (optional)", "deleteOnEmpty": "true"}>
-                {C. Esker Gabbro et al.} %<{"type": "text", "description": "Author(s)"}>
-                {Journal of ambitious hobby projects (2012)} %<{"type": "text", "description": "Journal / Conference"}>
-                {DOI: 12.3456/1234567.1234567} %<{"type": "text", "description": "URL / Link text"}>
-                [https://doi.org/12.3456/1234567.1234567] %<{"type": "url", "description": "URL / Link"}>
+                {Looking for Water on Mars} %<{type: "text", description: "Title", inputValue: "Looking for Water on Mars"}>
+                []%<{type: "text", description: "Description (optional)", deleteOnEmpty: "true"}>
+                {C. Esker Gabbro et al.} %<{type: "text", description: "Author(s)", inputValue: "C. Esker Gabbro et al."}>
+                {Journal of ambitious hobby projects (2012)} %<{type: "text", description: "Journal / Conference", inputValue: "Journal of ambitious hobby projects (2012)"}>
+                {DOI: 12.3456/1234567.1234567} %<{type: "text", description: "URL / Link text", inputValue: "DOI: 12.3456/1234567.1234567"}>
+                [https://doi.org/12.3456/1234567.1234567] %<{type: "url", description: "URL / Link", inputValue: "https://doi.org/12.3456/1234567.1234567"}>
             %>
-            \entryPub
-            {Life on Mars: All You Need Is a Twix}
-            {C. Esker Gabbro et al.}
-            {Conference on universal puns (2017)}
-            {DOI: 12.6543/7654321.7654321}
-            [https://doi.org/12.6543/7654321.7654321]
+            %<{type: "group", description: ""}
+                \entryPub
+                {Life on Mars: All You Need Is a Twix} %<{type: "text", description: "Title", inputValue: "Life on Mars: All You Need Is a Twix"}>
+                []%<{type: "text", description: "Description (optional)", deleteOnEmpty: "true"}>
+                {C. Esker Gabbro et al.} %<{type: "text", description: "Author(s)", inputValue: "C. Esker Gabbro et al."}>
+                {Conference on universal puns (2017)} %<{type: "text", description: "Journal / Conference", inputValue: "Conference on universal puns (2017)"}>
+                {DOI: 12.6543/7654321.7654321} %<{type: "text", description: "URL / Link text", inputValue: "DOI: 12.6543/7654321.7654321"}>
+                [https://doi.org/12.6543/7654321.7654321] %<{type: "url", description: "URL / Link", inputValue: "https://doi.org/12.6543/7654321.7654321"}>
+            %>
         %>
     \end{mainsection}
     %>
 
-    %<{"type": "group", "description": "Projects", "deleteOnEmpty": "true"}
+    %<{type: "group", description: "Projects", deleteOnEmpty: true}
     \begin{mainsection}
-        {Projects} %<{"type": "text", "description": "Custom projects section title"}>
-        %<{"type": "list", "description": "Projects"}
-            %<{"type": "group", "description": ""}
-            \entryGeneric
-            {This LaTeX résumé} %<{"type": "text", "description": "Title"}>
-            [Great success in interstellar job applications] %<{"type": "text", "description": "Description (optional)", "deleteOnEmpty": "true"}>
-            %<{"type": "list", "description": "Info items", "maxChildren": 3}
-                %<{"type": "group", "description": ""}
-                [
-                    \infoGeneric
-                    {\faGlobe}%<{"type": "faicon", "description": "Icon"}>
-                    {ceskergabbro.com/llresume}%<{"type": "text", "description": "Text"}>
-                    [https://ceskergabbro.com/llresume] %<{"type": "url", "description": "URL (Optional)", "deleteOnEmpty": "true"}>
-                ]
+        {Projects} %<{type: "text", description: "Projects section title", inputValue: "Projects"}>
+        %<{type: "list", description: "Projects"}
+            %<{type: "group", description: ""}
+                \entryGeneric
+                {This LaTeX résumé} %<{type: "text", description: "Title", inputValue: "This LaTeX résumé"}>
+                [Great success in interstellar job applications] %<{type: "text", description: "Description (optional)", deleteOnEmpty: true, inputValue: "Great success in interstellar job applications"}>
+                %<{type: "list", description: "Info items", maxChildren: 3}
+                    %<{type: "group", description: ""}
+                    [
+                        \infoGeneric
+                        {\faGlobe}%<{type: "faicon", description: "Icon", inputValue: "\\faGlobe", inputValueIcon: "FaGlobe"}>
+                        {ceskergabbro.com/llresume}%<{type: "text", description: "Text", inputValue: "ceskergabbro.com/llresume"}>
+                        [https://ceskergabbro.com/llresume] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: true, inputValue: "https://ceskergabbro.com/llresume"}>
+                    ]
+                    %>
+                    %<{type: "group", description: ""}
+                    [
+                        \infoGeneric
+                        {\faGithub}%<{type: "faicon", description: "Icon", inputValue: "\\faGithub", inputValueIcon: "FaGithub"}>
+                        {github.com/ceskergabbro/llresume}%<{type: "text", description: "Text", inputValue: "github.com/ceskergabbro/llresume"}>
+                        [https://github.com/ceskergabbro/llresume] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: true, inputValue: "https://github.com/ceskergabbro/llresume"}>
+                    ]
+                    %>
                 %>
-                [\infoGithub
-                    {github.com/ceskergabbro/llresume}
-                    [https://github.com/ceskergabbro/llresume]]
             %>
+            %<{type: "group", description: ""}
+                \entryGeneric
+                {The strange look of cats on Mars} %<{type: "text", description: "Title", inputValue: "The strange look of cats on Mars"}>
+                [A collection of the strangest photos of cats] %<{type: "text", description: "Description (optional)", deleteOnEmpty: true, inputValue: "A collection of the strangest photos of cats"}>
+                %<{type: "list", description: "Info items", maxChildren: 3}
+                    %<{type: "group", description: ""}
+                    [
+                        \infoGeneric
+                        {\faFlickr}%<{type: "faicon", description: "Icon", inputValue: "\\faFlickr", inputValueIcon: "FaFlickr"}>
+                        {www.flickr.com/ceskergabbro/catsonmars}%<{type: "text", description: "Text", inputValue: "www.flickr.com/ceskergabbro/catsonmars"}>
+                        [https://www.flickr.com/ceskergabbro/catsonmars] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: true, inputValue: "https://www.flickr.com/ceskergabbro/catsonmars"}>
+                    ]
+                    %>
+                %>
             %>
-            \entryGeneric
-            {The strange look of cats on Mars}
-            [A collection of the strangest photos of cats]
-            [\infoFlickr
-                {www.flickr.com/ceskergabbro/catsonmars}
-                [https://www.flickr.com/ceskergabbro/catsonmars]]
         %>
     \end{mainsection}
     %>
 
-    %<{"type": "group", "description": "Work experience", "deleteOnEmpty": "true"}
+    %<{type: "group", description: "Work experience", deleteOnEmpty: true}
     \begin{mainsection}
-        {Work experience} %<{"type": "text", "description": "Custom work experience section title"}>
-        %<{"type": "list", "description": "Experiences"}
-            %<{"type": "group", "description": ""}
+        {Work experience} %<{type: "text", description: "Work experience section title", inputValue: "Work experience"}>
+        %<{type: "list", description: "Experiences"}
+            %<{type: "group", description: ""}
                 \entryJob
-                {Mars explorer} %<{"type": "text", "description": "Title"}>
-                [Mostly playing with Mars rovers to search for the remains of an ancient society] %<{"type": "text", "description": "Description (optional)", "deleteOnEmpty": "true"}>
-                {Mars (Solar System)} %<{"type": "text", "description": "Location"}>
-                {November 2017 -- present} %<{"type": "text", "description": "Duration"}>
+                {Mars explorer} %<{type: "text", description: "Title", inputValue: "Mars explorer"}>
+                [Mostly playing with Mars rovers to search for the remains of an ancient society] %<{type: "text", description: "Description (optional)", deleteOnEmpty: true, inputValue: "Mostly playing with Mars rovers to search for the remains of an ancient society"}>
+                {Mars (Solar System)} %<{type: "text", description: "Location", inputValue: "Mars (Solar System)"}>
+                {November 2017 -- present} %<{type: "text", description: "Duration", inputValue: "November 2017 -- present"}>
             %>
-            \entryJob
-            {Personal portable heater}
-            [Hired on demand by those who happened to feel cold during the
-                day and could use a hug too]
-            {All over Earth}
-            {June 2008 -- March 2010}
+            %<{type: "group", description: ""}
+                \entryJob
+                {Personal portable heater} %<{type: "text", description: "Title", inputValue: "Personal portable heater"}>
+                [Hired on demand by those who happened to feel cold during the day and could use a hug too] %<{type: "text", description: "Description (optional)", deleteOnEmpty: true, inputValue: "Hired on demand by those who happened to feel cold during the day and could use a hug too"}>
+                {All over Earth} %<{type: "text", description: "Location", inputValue: "All over Earth"}>
+                {June 2008 -- March 2010} %<{type: "text", description: "Duration", inputValue: "June 2008 -- March 2010"}>
+            %>
         %>
     \end{mainsection}
     %>
 
-    %<{"type": "group", "description": "Skills and languages", "deleteOnEmpty": "true"}
+    %<{type: "group", description: "Skills and languages", deleteOnEmpty: true}
     \begin{mainsection}
-        {Skills \& languages} %<{"type": "text", "description": "Custom skills / languages section title"}>
-        %<{"type": "list", "description": "Graded skills", "deleteOnEmpty": "true"}
-            %<{"type": "group", "description": ""}
+        {Skills \& languages} %<{type: "text", description: "Skills / languages section title", inputValue: "Skills \\& languages"}>
+        %<{type: "list", description: "Graded skills", deleteOnEmpty: true}
+            %<{type: "group", description: ""}
                 \entrySkills
-                [Computer] %<{"type": "text", "description": "Category name (optional)", "deleteOnEmpty": "true"}>
+                [Computer] %<{type: "text", description: "Category name (optional)", deleteOnEmpty: true, inputValue: "Computer"}>
                 {
-                    %<{"type": "list", "description": "Graded skills", "deleteOnEmpty": "true"}
-                        %<{"type": "group", "description": ""}
+                    %<{type: "list", description: "Graded skills", deleteOnEmpty: true}
+                        %<{type: "group", description: ""}
                             \skill
-                            {Python++} %<{"type": "text", "description": "Name"}>
-                            %<{"type": "slider", "description": "Skill level", "min": 1, "max": 3}
+                            {Python++} %<{type: "text", description: "Name", inputValue: "Python++"}>
+                            %<{type: "slider", description: "Skill level", min: 1, max: 3, inputValue: "3"}
                                 {3}
                             %>
                         %>
-                        \skill{DeRust}{2}
-                        \skill{JavaSharp}{2}
-                        \skill{Macrohard}{1}
+                        %<{type: "group", description: ""}
+                            \skill
+                            {DeRust} %<{type: "text", description: "Name", inputValue: "DeRust"}>
+                            %<{type: "slider", description: "Skill level", min: 1, max: 3, inputValue: "2"}
+                                {2}
+                            %>
+                        %>
+                        %<{type: "group", description: ""}
+                            \skill
+                            {JavaSharp} %<{type: "text", description: "Name", inputValue: "JavaSharp"}>
+                            %<{type: "slider", description: "Skill level", min: 1, max: 3, inputValue: "2"}
+                                {2}
+                            %>
+                        %>
+                        %<{type: "group", description: ""}
+                            \skill
+                            {Macrohard} %<{type: "text", description: "Name", inputValue: "Macrohard"}>
+                            %<{type: "slider", description: "Skill level", min: 1, max: 3, inputValue: "1"}
+                                {1}
+                            %>
+                        %>
                     %>
                 }
             %>
         %>
-        %<{"type": "list", "description": "Simple skills", "deleteOnEmpty": "true"}
-            %<{"type": "group", "description": ""}
+        %<{type: "list", description: "Simple skills", deleteOnEmpty: true}
+            %<{type: "group", description: ""}
             \entrySkills
-            [Other tools] %<{"type": "text", "description": "Category name (optional)", "deleteOnEmpty": "true"}>
+            [Other tools] %<{type: "text", description: "Category name (optional)", deleteOnEmpty: true, inputValue: "Other tools"}>
             {
-                %<{"type": "list", "description": "Simple skills", "deleteOnEmpty": "true"}
-                    \simpleskill{Mars rover} %<{"type": "text", "description": "Name"}>
-                    \simpleskill{Asteroid gazer}
-                    \simpleskill{Brain}
-                    \simpleskill{Ballpoint pen}
-                    \simpleskill{Signalscope}
+                %<{type: "list", description: "Simple skills", deleteOnEmpty: true}
+                    \simpleskill{Mars rover} %<{type: "text", description: "Name", inputValue: "Mars rover"}>
+                    \simpleskill{Asteroid gazer} %<{type: "text", description: "Name", inputValue: "Asteroid gazer"}>
+                    \simpleskill{Brain} %<{type: "text", description: "Name", inputValue: "Brain"}>
+                    \simpleskill{Ballpoint pen} %<{type: "text", description: "Name", inputValue: "Ballpoint pen"}>
+                    \simpleskill{Signalscope} %<{type: "text", description: "Name", inputValue: "Signalscope"}>
                 %>
             }
             %>
@@ -231,36 +288,36 @@
     \end{mainsection}
     %>
 
-    %<{"type": "group", "description": "Personal interests", "deleteOnEmpty": "true"}
+    %<{type: "group", description: "Personal interests", deleteOnEmpty: true}
     \begin{mainsection}
-        {Personal interests} %<{"type": "text", "description": "Custom personal interests section title"}>
+        {Personal interests} %<{type: "text", description: "Personal interests section title", inputValue: "Personal interests"}>
         \entryTags{
-            %<{"type": "list", "description": "Interests"}
-            \boxedtag{Writing quantum poems} %<{"type": "text", "description": "Interest"}>
-            \boxedtag{Playing the flute}
-            \boxedtag{Collecting minerals}
-            \boxedtag{Building hammocks}
+            %<{type: "list", description: "Interests"}
+            \boxedtag{Writing quantum poems} %<{type: "text", description: "Interest", inputValue: "Writing quantum poems"}>
+            \boxedtag{Playing the flute} %<{type: "text", description: "Interest", inputValue: "Playing the flute"}>
+            \boxedtag{Collecting minerals} %<{type: "text", description: "Interest", inputValue: "Collecting minerals"}>
+            \boxedtag{Building hammocks} %<{type: "text", description: "Interest", inputValue: "Building hammocks"}>
             %>
         }
     \end{mainsection}
     %>
 
-    %<{"type": "list", "description": "Extra sections (optional)", "deleteOnEmpty": "true"}
-        %<{"type": "group", "description": "Section"}
+    %<{type: "list", description: "Extra sections (optional)", deleteOnEmpty: true}
+        %<{type: "group", description: "Section"}
         \begin{mainsection}
-            {Extra section} %<{"type": "text", "description": "Section title"}>
-            %<{"type": "list", "description": "Items"}
-                %<{"type": "group", "description": ""}
+            {Extra section} %<{type: "text", description: "Section title", inputValue: "Extra section"}>
+            %<{type: "list", description: "Items"}
+                %<{type: "group", description: ""}
                     \entryGeneric
-                    {Item 1} %<{"type": "text", "description": "Title"}>
-                    [Item 1 description] %<{"type": "text", "description": "Description (optional)", "deleteOnEmpty": "true"}>
-                    %<{"type": "list", "description": "Info items", "maxChildren": 3}
-                        %<{"type": "group", "description": ""}
+                    {Item 1} %<{type: "text", description: "Title", inputValue: "Item 1"}>
+                    [Item 1 description] %<{type: "text", description: "Description (optional)", deleteOnEmpty: true, inputValue: "Item 1 description"}>
+                    %<{type: "list", description: "Info items", maxChildren: 3}
+                        %<{type: "group", description: ""}
                         [
                             \infoGeneric
-                            {\faGlobe}%<{"type": "faicon", "description": "Icon"}>
-                            {myurl.com/item1Url}%<{"type": "text", "description": "Text"}>
-                            [https://myurl.com/item1Url] %<{"type": "url", "description": "URL (Optional)", "deleteOnEmpty": "true"}>
+                            {\faGlobe}%<{type: "faicon", description: "Icon", inputValue: "\\faGlobe", inputValueIcon: "FaGlobe"}>
+                            {myurl.com/item1Url}%<{type: "text", description: "Text", inputValue: "myurl.com/item1Url"}>
+                            [https://myurl.com/item1Url] %<{type: "url", description: "URL (Optional)", deleteOnEmpty: true, inputValue: "https://myurl.com/item1Url"}>
                         ]
                         %>
                     %>
@@ -279,7 +336,8 @@
 %        {description: "Compact", value: "compact"},
 %        {description: "Default", value: ""}
 %    ],
-%    id: "cvStyle"
+%    id: "cvStyle",
+%    deleteOnEmpty: true
 % }
 \hide{}
 %>
